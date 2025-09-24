@@ -91,6 +91,8 @@ GET /api/employees/<uuid:id>/
 
 curl -X GET "http://127.0.0.1:8000/api/employees/<uuid:id>/"
 
+ejemplo: http://127.0.0.1:8000/api/employees/5d888eb9-d938-4214-93f8-331e82bf0719/
+
 -------------------------------------------------------------------------------------------------------
 
 4. Actualizar empleado
