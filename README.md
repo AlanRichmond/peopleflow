@@ -66,6 +66,7 @@ GET /api/employees/?puesto=Developer&page=1&page_size=10
 curl -X GET "http://127.0.0.1:8000/api/employees/"
 
 curl -X GET "http://127.0.0.1:8000/api/employees/?puesto=Developer&page=1&page_size=10"
+
 curl -X GET "http://127.0.0.1:8000/api/employees/?puesto=jefa&page=1&page_size=2"
 
 -------------------------------------------------------------------------------------------------------
