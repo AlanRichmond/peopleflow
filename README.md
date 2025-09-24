@@ -128,7 +128,7 @@ Los emails de los empleados deben ser únicos. Intentar insertar un email duplic
 Para filtrar empleados por puesto y paginar, usar parámetros en la URL:
 
 GET /api/employees/?puesto=Developer&page=2&page_size=5
-
+- page y page_size controlan la paginación de resultados.
 
 ## Ideas de mejora y expansión del proyecto
 
