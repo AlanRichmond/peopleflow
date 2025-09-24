@@ -8,6 +8,7 @@ Tecnologías y versiones
 - MongoEngine: para manejar MongoDB desde Django
 - MongoDB: 7.x (o la versión que tengas instalada)
 
+
 Instalación y configuración
 
 Clonar el repositorio:
@@ -61,11 +62,12 @@ La API estará disponible en: http://127.0.0.1:8000/api/
 
 1. Listar empleados (con filtro y paginación)
 GET /api/employees/?puesto=Developer&page=1&page_size=10
+curl -X GET "http://127.0.0.1:8000/api/employees/?puesto=Developer&page=1&page_size=10"
+-------------------------------------------------------------------------------------------------------
 
 2. Crear empleado
 POST /api/employees/
 Content-Type: application/json
-
 {
     "nombre": "Juan",
     "apellido": "Pérez",
@@ -74,14 +76,19 @@ Content-Type: application/json
     "salario": "45000.00",
     "fecha_ingreso": "2025-09-01"
 }
+curl -X POST "http://127.0.0.1:8000/api/employees/" \
+     -H "Content-Type: application/json" \
+     -d '{"nombre": "Juan", "apellido": "Pérez", "email": "juan.perez@mail.com", "puesto": "Developer", "salario": "45000.00", "fecha_ingreso": "2025-09-01"}'
+-------------------------------------------------------------------------------------------------------
 
 3. Obtener detalle de empleado
 GET /api/employees/<uuid:id>/
+curl -X GET "http://127.0.0.1:8000/api/employees/<uuid:id>/"
+-------------------------------------------------------------------------------------------------------
 
 4. Actualizar empleado
 PUT /api/employees/<uuid:id>/
 Content-Type: application/json
-
 {
     "nombre": "Juan",
     "apellido": "Pérez",
@@ -90,9 +97,18 @@ Content-Type: application/json
     "salario": "50000.00",
     "fecha_ingreso": "2025-09-01"
 }
+curl -X PUT "http://127.0.0.1:8000/api/employees/<uuid:id>/" \
+     -H "Content-Type: application/json" \
+     -d '{"nombre": "Juan", "apellido": "Pérez", "email": "juan.perez@mail.com", "puesto": "Senior Developer", "salario": "50000.00", "fecha_ingreso": "2025-09-01"}'
+
+-------------------------------------------------------------------------------------------------------
 
 5. Borrar empleado
 DELETE /api/employees/<uuid:id>/
+curl -X DELETE "http://127.0.0.1:8000/api/employees/<uuid:id>/"
+
+Los curl se pueden usar desde el Postman
+-------------------------------------------------------------------------------------------------------
 
 Notas importantes
 Los emails de los empleados deben ser únicos. Intentar insertar un email duplicado lanzará un error.
