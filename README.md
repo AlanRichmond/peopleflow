@@ -64,6 +64,7 @@ La API estará disponible en: http://127.0.0.1:8000/api/
 GET /api/employees/?puesto=Developer&page=1&page_size=10
 
 curl -X GET "http://127.0.0.1:8000/api/employees/?puesto=Developer&page=1&page_size=10"
+
 -------------------------------------------------------------------------------------------------------
 
 2. Crear empleado
@@ -81,11 +82,15 @@ Content-Type: application/json
 curl -X POST "http://127.0.0.1:8000/api/employees/" \
      -H "Content-Type: application/json" \
      -d '{"nombre": "Juan", "apellido": "Pérez", "email": "juan.perez@mail.com", "puesto": "Developer", "salario": "45000.00", "fecha_ingreso": "2025-09-01"}'
+     
 -------------------------------------------------------------------------------------------------------
 
 3. Obtener detalle de empleado
 GET /api/employees/<uuid:id>/
+
+
 curl -X GET "http://127.0.0.1:8000/api/employees/<uuid:id>/"
+
 -------------------------------------------------------------------------------------------------------
 
 4. Actualizar empleado
